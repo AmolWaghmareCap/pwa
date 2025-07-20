@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GRADLE_HOME = '/usr/share/gradle'
-        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk'
+        JAVA_HOME = 'C:\\Program Files\\Java\\jdk-17'
         DEPLOY_PATH = '/opt/tomcat/webapps'
     }
 
