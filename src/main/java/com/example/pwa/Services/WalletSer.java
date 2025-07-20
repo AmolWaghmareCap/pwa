@@ -11,10 +11,12 @@ import com.example.pwa.Repository.WalletRepo;
 import com.example.pwa.Repository.userRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+@Service
 public class WalletSer {
 
     @Autowired
