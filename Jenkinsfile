@@ -58,22 +58,12 @@ pipeline {
             }
         }
 
-        stage('Deploy to Tomcat') {
+        stage('Run App') {
             steps {
-                echo 'Deploying to Tomcat...'
-                bat '''
-                    cp build/libs/*.jar $DEPLOY_PATH/app.jar
-                    systemctl restart tomcat
-                '''
+                bat 'java -jar build\\libs\\myapp.jar'
             }
         }
 
-        stage('Post-Deployment') {
-            steps {
-                echo 'Running post-deployment checks...'
-                // Add health checks or smoke tests
-            }
-        }
     }
 
     post {
