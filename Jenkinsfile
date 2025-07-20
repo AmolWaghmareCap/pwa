@@ -16,13 +16,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh './gradlew clean build'
+                bat './gradlew clean build'
             }
         }
 
         stage('Test') {
             steps {
-                sh './gradlew test'
+                bat './gradlew test'
             }
         }
 
@@ -35,14 +35,14 @@ pipeline {
 
         stage('Package') {
             steps {
-                sh './gradlew bootJar'
+                bat './gradlew bootJar'
             }
         }
 
         stage('Deploy to Tomcat') {
             steps {
                 echo 'Deploying to Tomcat...'
-                sh '''
+                bat '''
                     cp build/libs/*.jar $DEPLOY_PATH/app.jar
                     systemctl restart tomcat
                 '''
