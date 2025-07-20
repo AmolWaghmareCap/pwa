@@ -60,7 +60,7 @@ pipeline {
 
         stage('Run App') {
             steps {
-                bat 'java -jar build\\libs\\myapp.jar'
+                bat 'start "" java -jar build\\libs\\myapp.jar'
             }
         }
 
